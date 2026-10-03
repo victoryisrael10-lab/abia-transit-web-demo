@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #e8edf7;
+  background: #07111f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: #07111f;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 12% 2%, rgb(16 92 74 / 26%), transparent 34rem),
+    radial-gradient(ellipse at 100% 24%, rgb(26 73 124 / 16%), transparent 36rem),
+    #07111f;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.glass-panel {
+  border: 1px solid rgb(180 205 226 / 13%);
+  background: linear-gradient(145deg, rgb(20 36 55 / 78%), rgb(12 25 41 / 78%));
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 24%),
+    inset 0 1px 0 rgb(255 255 255 / 5%);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.subtle-grid {
+  background-image: linear-gradient(rgb(173 198 220 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(173 198 220 / 4%) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 34px 34px;
+}
+
+.abiaride-bus-marker {
+  background: transparent;
+  border: 0;
+}
+
+.abiaride-bus-marker > span {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid rgb(255 255 255 / 92%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 22px rgb(7 63 48 / 50%), 0 0 0 7px rgb(30 197 137 / 18%);
+  animation: bus-pulse 2.2s ease-out infinite;
+}
+
+.abiaride-bus-marker img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  object-fit: contain;
+}
+
+.abiaride-stop-marker {
+  border: 3px solid #ecfdf5;
+  border-radius: 50%;
+  background: #12a875;
+  box-shadow: 0 2px 12px rgb(2 25 20 / 45%);
+}
+
+.leaflet-tooltip.abiaride-stop-label {
+  padding: 5px 9px;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 8px;
+  color: #f8fafc;
+  background: rgb(9 23 37 / 88%);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.leaflet-tooltip-top.abiaride-stop-label::before {
+  border-top-color: rgb(9 23 37 / 88%);
+}
+
+@keyframes bus-pulse {
+  0% {
+    box-shadow: 0 8px 22px rgb(7 63 48 / 50%), 0 0 0 4px rgb(30 197 137 / 30%);
+  }
+
+  70% {
+    box-shadow: 0 8px 22px rgb(7 63 48 / 50%), 0 0 0 12px rgb(30 197 137 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 8px 22px rgb(7 63 48 / 50%), 0 0 0 4px rgb(30 197 137 / 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
